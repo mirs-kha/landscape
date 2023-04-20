@@ -43,7 +43,7 @@
         display: block;
         background-color: black;
         color: rgb(97, 145, 35);
-        height: 100vh;
+        min-height: 100vh;
 
     }
 
