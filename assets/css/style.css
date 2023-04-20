@@ -9,11 +9,13 @@
 
 }
 
-.ange p{
+#p{
+color: white;
     
 }
 
 .ange h1{
+    padding-top: 30px;
 
 }
 
@@ -31,6 +33,7 @@
         display: block;
         background-color: black;
         color: rgb(97, 145, 35);
+        height: 100vh;
 
     }
 
