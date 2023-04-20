@@ -1,0 +1,13 @@
+
+
+
+.demon{
+    display: none;
+}
+
+@media (orientation: landscape) {
+    .demon{
+        display: block;
+    }
+
+}
