@@ -1,4 +1,6 @@
-
+*{
+    text-align: center;
+}
 
 
 .demon{
@@ -10,9 +12,25 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) (orientation: landscape) {
     .demon{
         display: block;
-    }
+        background-color: black;
+        color: rgb(97, 145, 35);
     
-        .ange{
+    }
+
+    .armes{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .arme{
+        width: 30%;
+    }
+
+    .arme img{
+        width: 100%;
+
+    }
+    .ange{
         display: none;
     }
 
