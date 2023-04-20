@@ -10,9 +10,17 @@
 }
 
 #tempsange{
-color: white;
-position: absolute;
-bottom: 50px;
+    color: white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: #ff459a;
+    width: 50%;
+    padding: 20px;
     
 }
 
