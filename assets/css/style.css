@@ -5,7 +5,7 @@
     display: none;
 }
 
-@media  only screen  (orientation: landscape) {
+@media  (orientation: landscape) {
     .demon{
         display: block;
     }
