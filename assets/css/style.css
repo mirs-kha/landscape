@@ -2,6 +2,24 @@
     text-align: center;
 }
 
+.ange{
+    background: url("../landscape/assets/img/cake.png") center / cover;
+    color: white;
+
+}
+
+.ange p{
+    
+}
+
+.ange h1{
+
+}
+
+.ange h2{
+
+}
+
 
 .demon{
     display: none;
