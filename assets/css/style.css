@@ -7,9 +7,7 @@
     display: none;
 }
 
-@media  only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) (orientation: landscape) {
+@media  (orientation: landscape) {
     .demon{
         display: block;
         background-color: black;
