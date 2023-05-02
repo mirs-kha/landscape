@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+<body>
+  <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+
+
+      <!-- <video
+    id="my-video"
+    class="video-js"
+   controls
+    preload="auto"
+     width="640"
+     height="264"
+
+     data-setup="{}"
+  >
+     <source src="https://origin2-6play.live.6cloud.fr/pool_rnpls9by/gulli/sixplaysd/hls_short_q2hyb21h_gulli/index.m3u8"  type="application/x-mpegURL">
+
+    
+
+        
+        
+    
+     <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+     web browser that
+       <a href="https://videojs.com/html5-video-support/" target="_blank"
+         >supports HTML5 video</a
+      >
+     </p>
+   </video> -->
+
+
+
+    <div class="tab-content">
+        <div id="home2" data-tab-content class="active">
+          <h1>Sports</h1>
+          <p>This is the home</p>
+          <p>Number of episodes: <span id="episodes"></span></p>
+
+
+
+
+          <div class="all">
+            <div id="monlecteur" class="lecteur">
+              <p id="demo">
+                <video
+                id="my-video"
+                class="video-js"
+                controls
+                preload="auto"
+                vjs-16-9
+                
+
+    
+                data-setup="{}"
+                src="
+                https://vjs.zencdn.net/v/oceans.mp4"
+              >
+    
+    
+    
+                </video>
+            </div>
+            <div id="maliste"class="liste">
+              
+            </div>
+          </div>
+
+
+
+
+
+
+
+          </p>
+        </div>
+
+        <div id="enfant" data-tab-content>
+          <h1>Enfants</h1>
+          <p>Some information on pricing</p>
+        </div>
+
+        <div id="cinema" data-tab-content>
+          <h1>Cinéma</h1>
+          <p>Let me tell you about me</p>
+        </div>
+
+        <div id="news" data-tab-content>
+          <h1>News</h1>
+          <p>News is great.</p>
+        </div>
+        
+
+        <ul class="tabs">
+          <li data-tab-target="#home2" class="active tab">Sports</li>
+          <li data-tab-target="#enfant" class="tab">Enfant</li>
+          <li data-tab-target="#cinema" class="tab">Cinema</li>
+          <li data-tab-target="#news" class="tab">News</li>
+      </ul>
+      
+    </div>
+
+
+
+<script>
+
+class TV {
+  constructor(title, channel, color, url) {
+    this.title = title;
+    this.channel = channel;
+    this.color = color;
+    this.url = url;
+  }
+}
+
+let firstEpisode = new TV('Gulli', 18, "color1", 'https://origin2-6play.live.6cloud.fr/pool_rnpls9by/gulli/sixplaysd/hls_short_q2hyb21h_gulli/index.m3u8');
+let secondEpisode = new TV('supertoons', 450, "color2",'https://kedoo-supertoonstv-3-fr.samsung.wurl.tv/playlist.m3u8');
+let thirdEpisode = new TV('W9', 60, "color1", 'https://origin-fra14-ed.pzaz.tv/live/w9/playlist.m3u8');
+let quaytre = new TV('Tf1', 45, "color2", 'https://origin-fra14-ed.pzaz.tv/live/tf1/playlist.m3u8');
+let cinq = new TV('Canal +', 45, "color1", 'http://hls-m007.live-lv3.canalplus-cdn.net/live/disk/canalplusclair-hd/hls-ios-fhd-clair/canalplusclair-hd.m3u8');
+let six = new TV('Arte', 60, "color2", 'https://artesimulcast.akamaized.net/hls/live/2031003/artelive_fr/index.m3u8');
+let sept = new TV('Tmc', 60, "color1", 'https://origin-fra14-ed.pzaz.tv/live/tmc/playlist.m3u8');
+let huit = new TV('cherie25', 60, "color2", 'https://cherie25.nrjaudio.fm/hls/live/2038375/c25/FHD.m3u8');
+let neuf = new TV('Tmc', 60, "color1", 'https://origin-fra14-ed.pzaz.tv/live/tmc/playlist.m3u8');
+
+// Modify the array here
+// ====================================
+let episodes = [firstEpisode, secondEpisode, thirdEpisode, quaytre, cinq, six, sept, huit, neuf]
+let numberOfEpisodes = episodes.length; // 6
+
+// ====================================
+
+const lecteur = document.querySelector('#monlecteur');
+const body = document.querySelector('#maliste');
+
+document.querySelector('#episodes').innerText = numberOfEpisodes;
+
+var box = document.createElement('div');
+box.classList.add('flex');
+
+
+
+
+for(let episode of episodes) {
+
+  let newDiv = document.createElement('div');
+  newDiv.classList.add('series-frame');
+  newDiv.setAttribute("class",`series-frame ${episode.color}`);
+
+
+// let myVideo = document.createElement('p')
+// myVideo.classList.add('infos');
+
+// myVideo.innerHTML = `  <video
+//     id="my-video"
+//     class="video-js"
+//     controls
+//     preload="auto"
+//     width="640"
+//     height="264"
+//     poster="MY_VIDEO_POSTER.jpg"
+//     data-setup="{}"
+//   >
+//     <source src="${episode.url}"  type="application/x-mpegURL">
+//     <source src="${episode.url}"  type="video/mp4">
+
+ 
+    
+    
+
+//     <p class="vjs-no-js">
+//       To view this video please enable JavaScript, and consider upgrading to a
+//       web browser that
+//       <a href="https://videojs.com/html5-video-support/" target="_blank"
+//         >supports HTML5 video</a
+//       >
+//     </p>
+//   </video>`
+
+  
+  let newTitle = document.createElement('h2');
+  newTitle.innerText = `${episode.title}`
+
+  // let newProductButton = document.createElement('button');
+  // newProductButton.innerHTML = `Voir cette chaine`
+
+  // let newUrl = document.createElement('h3');
+  // newUrl.innerHTML = `${episode.url}`
+  
+  // let newParagraph = document.createElement('p');
+  // newParagraph.innerText = `${episode.title} - chaine : ${episode.channel}
+
+  
+  // ${episode.duration} minutes
+  // ${episode.hasBeenWatched ? 'Already been watched' : 'Not yet watched'}`;
+
+
+  newDiv.append(newTitle);
+  // newDiv.append(newUrl);
+  // newDiv.append(newParagraph);
+  // newDiv.append(myVideo);
+
+  // newDiv.append(newProductButton);
+  box.append(newDiv);
+
+
+  //Passing this object as the argument to a onclick function
+  newDiv.addEventListener("click",function () {
+    parseplayer();
+  });
+
+
+  function parseplayer() {
+
+
+
+    
+    var myPlayer = videojs('#my-video');
+    myPlayer.autoplay(true);
+    myPlayer.loop(true);
+    myPlayer.fluid(true);
+
+myPlayer.src(`${episode.url}`);
+
+
+
+            
+  // let myvid = document.querySelector("#my-video_html5_api");
+  // console.log(myvid)
+  // myvid.setAttribute("src",`${episode.url}`);
+          };
+
+         
+}
+
+
+
+body.append(box);
+
+
+
+const tabs = document.querySelectorAll('[data-tab-target]')
+const tabContents = document.querySelectorAll('[data-tab-content]')
+
+
+
+
+
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    const target = document.querySelector(tab.dataset.tabTarget)
+    tabContents.forEach(tabContent => {
+      tabContent.classList.remove('active')
+  
+      
+    })
+    tabs.forEach(tab => {
+      tab.classList.remove('active')
+      
+    })
+    tab.classList.add('active')
+    target.classList.add('active')
+    
+  })
+})
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
