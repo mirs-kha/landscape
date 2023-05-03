@@ -21,7 +21,7 @@ body {
 
 #demo{
   position: sticky;
-  top:0;
+  top:50px;
   left: 0;
   width: 100%;
   background: #000;
