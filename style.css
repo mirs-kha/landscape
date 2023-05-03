@@ -134,6 +134,24 @@ margin-right: 20px;
 }
 
 
+@media (max-width: 768px) { 
+
+.all{
+  display: flex;
+    flex-direction: column;
+  }
+  
+  .lecteur {
+    width: 100vw;
+}
+  
+.series-frame {
+    width: 100vw;
+  }
+
+}
+
+
 
 
 
