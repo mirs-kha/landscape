@@ -44,9 +44,9 @@
 
     <div class="tab-content">
         <div id="home2" data-tab-content class="active">
-          <h1>Sports</h1>
+          <h1>Direct</h1>
           <p>This is the home</p>
-          <p>Number of episodes: <span id="episodes"></span></p>
+          <p>Number of channel: <span id="episodes"></span></p>
 
 
 
@@ -71,8 +71,11 @@
     
     
                 </video>
+
+                <p id="titretv"></p>
             </div>
             <div id="maliste"class="liste">
+
               
             </div>
           </div>
@@ -103,7 +106,7 @@
         
 
         <ul class="tabs">
-          <li data-tab-target="#home2" class="active tab">Sports</li>
+          <li data-tab-target="#home2" class="active tab">Direct</li>
           <li data-tab-target="#enfant" class="tab">Enfant</li>
           <li data-tab-target="#cinema" class="tab">Cinema</li>
           <li data-tab-target="#news" class="tab">News</li>
@@ -124,12 +127,12 @@ class TV {
   }
 }
 
-let firstEpisode = new TV('Gulli', 18, "color1", 'https://origin2-6play.live.6cloud.fr/pool_rnpls9by/gulli/sixplaysd/hls_short_q2hyb21h_gulli/index.m3u8');
-let secondEpisode = new TV('supertoons', 450, "color2",'https://kedoo-supertoonstv-3-fr.samsung.wurl.tv/playlist.m3u8');
-let thirdEpisode = new TV('W9', 60, "color1", 'https://origin-fra14-ed.pzaz.tv/live/w9/playlist.m3u8');
+let firstEpisode = new TV('Gulli', 18, "enfant", 'https://origin2-6play.live.6cloud.fr/pool_rnpls9by/gulli/sixplaysd/hls_short_q2hyb21h_gulli/index.m3u8');
+let secondEpisode = new TV('supertoons', 450, "enfant",'https://kedoo-supertoonstv-3-fr.samsung.wurl.tv/playlist.m3u8');
+let thirdEpisode = new TV('W9', 60, "w9", 'https://origin-fra14-ed.pzaz.tv/live/w9/playlist.m3u8');
 let quaytre = new TV('Tf1', 45, "color2", 'https://origin-fra14-ed.pzaz.tv/live/tf1/playlist.m3u8');
-let cinq = new TV('Canal +', 45, "color1", 'http://hls-m007.live-lv3.canalplus-cdn.net/live/disk/canalplusclair-hd/hls-ios-fhd-clair/canalplusclair-hd.m3u8');
-let six = new TV('Arte', 60, "color2", 'https://artesimulcast.akamaized.net/hls/live/2031003/artelive_fr/index.m3u8');
+let cinq = new TV('Canal +', 45, "tf1", 'http://hls-m007.live-lv3.canalplus-cdn.net/live/disk/canalplusclair-hd/hls-ios-fhd-clair/canalplusclair-hd.m3u8');
+let six = new TV('Arte', 60, "canal", 'https://artesimulcast.akamaized.net/hls/live/2031003/artelive_fr/index.m3u8');
 let sept = new TV('Tmc', 60, "color1", 'https://origin-fra14-ed.pzaz.tv/live/tmc/playlist.m3u8');
 let huit = new TV('cherie25', 60, "color2", 'https://cherie25.nrjaudio.fm/hls/live/2038375/c25/FHD.m3u8');
 let neuf = new TV('Tmc', 60, "color1", 'https://origin-fra14-ed.pzaz.tv/live/tmc/playlist.m3u8');
@@ -224,7 +227,8 @@ for(let episode of episodes) {
   function parseplayer() {
 
 
-
+    let montitre = document.querySelector("#titretv");
+    montitre.innerText = `${episode.title}`
     
     var myPlayer = videojs('#my-video');
     myPlayer.autoplay(true);
