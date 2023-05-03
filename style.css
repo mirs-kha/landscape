@@ -41,16 +41,29 @@ video{
   max-width: 100%;
 }
 
-.color1{
-  background: #000000;
-  color: #EEE;
+.enfant{
+background: url(https://mirs-kha.github.io/landscape/enfant.png);
 
 }
 
-.color2{
-  background: #141414;
-  color: #EEE;
+.w9{
+background: url(https://mirs-kha.github.io/landscape/am9.png);
 }
+
+.tf1{
+background: url(https://mirs-kha.github.io/landscape/tf1.png);
+}
+
+.canal{
+background: url(https://mirs-kha.github.io/landscape/c+.png);
+}
+
+
+
+
+
+
+
 .tabs {
   background: black;
   display: flex;
