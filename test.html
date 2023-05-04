@@ -72,7 +72,7 @@
             <button id="pauseplayser" class="grandecran">Pause</button>
             <button id="playplayser" class="grandecran">Play</button>
             <button id="closeplayser" class="grandecran">Fermer</button>
-            <button id="randomplayser" onclick="test();" class="grandecran">Random</button>
+            <button id="randomplayser" class="grandecran">Random</button>
 
           </div>
 
@@ -162,174 +162,42 @@
 
 
 
-    for (let episode of episodes) {
 
-      //random
-      function test() {
-        var values = [episode.url]
-         var valueToUse = values[Math.floor(Math.random() * values.length)];
-        // do something with the selected value
-        alert(valueToUse);
-        // myPlayer.src(episode.url);
-        console.log(valueToUse);
-      }
+    var m3u = []
 
+    episodes.forEach(element => {
+      m3u.push(element.url)
 
-
-
-
-
-
-
-
-    let newDiv = document.createElement('div');
-    newDiv.classList.add('series-frame');
-    newDiv.setAttribute("class", `series-frame ${episode.color}`);
-
-
-    // let myVideo = document.createElement('p')
-    // myVideo.classList.add('infos');
-
-    // myVideo.innerHTML = `  <video
-    //     id="my-video"
-    //     class="video-js"
-    //     controls
-    //     preload="auto"
-    //     width="640"
-    //     height="264"
-    //     poster="MY_VIDEO_POSTER.jpg"
-    //     data-setup="{}"
-    //   >
-    //     <source src="${episode.url}"  type="application/x-mpegURL">
-    //     <source src="${episode.url}"  type="video/mp4">
-
-
-
-
-
-    //     <p class="vjs-no-js">
-    //       To view this video please enable JavaScript, and consider upgrading to a
-    //       web browser that
-    //       <a href="https://videojs.com/html5-video-support/" target="_blank"
-    //         >supports HTML5 video</a
-    //       >
-    //     </p>
-    //   </video>`
-
-
-    let newTitle = document.createElement('h2');
-    newTitle.innerText = `${episode.title}`
-
-    // let newProductButton = document.createElement('button');
-    // newProductButton.innerHTML = `Voir cette chaine`
-
-    // let newUrl = document.createElement('h3');
-    // newUrl.innerHTML = `${episode.url}`
-
-    // let newParagraph = document.createElement('p');
-    // newParagraph.innerText = `${episode.title} - chaine : ${episode.channel}
-
-
-    // ${episode.duration} minutes
-    // ${episode.hasBeenWatched ? 'Already been watched' : 'Not yet watched'}`;
-
-
-    newDiv.append(newTitle);
-    // newDiv.append(newUrl);
-    // newDiv.append(newParagraph);
-    // newDiv.append(myVideo);
-
-    // newDiv.append(newProductButton);
-    box.append(newDiv);
-
-
-    //Passing this object as the argument to a onclick function
-    newDiv.addEventListener("click", function () {
-      parseplayer();
     });
 
 
-    function parseplayer() {
 
+    //random
 
-      let montitre = document.querySelector("#titretv");
-      montitre.innerText = `${episode.title}`
+    randomplayser.addEventListener("click", function () {
+      test();
+      
+    });
 
+    function test() {
       var myPlayer = videojs('#my-video');
       myPlayer.autoplay(true);
       myPlayer.loop(true);
       myPlayer.fluid(true);
-
-      myPlayer.src(`${episode.url}`);
-
-
-
-
+      var values = m3u
+      var valueToUse = values[Math.floor(Math.random() * values.length)];
+      // 
+      // alert(valueToUse);
 
 
-      //passer toutes les fonctions play/fermer.... lors de la création de la fonction parseplayer (creation du lecteur)
-
-      //fonction pleine écran
-
-
-      myPlayer.ready(function () {
-
-        fullplayser.addEventListener("click", function () {
-          fullplayer();
-        });
-
-        function fullplayer() {
-
-          // `this` is the player in this context
-
-          if (myPlayer.isFullscreen()) {
-            myPlayer.exitFullscreen();
-          } else {
-            myPlayer.requestFullscreen();
-          }
-        };
+        
+      myPlayer.src(valueToUse);
+      console.log(valueToUse);
+    }
 
 
 
-
-        //pause
-        pauseplayser.addEventListener("click", function () {
-          attendreplayer();
-        });
-
-        function attendreplayer() {
-
-          myPlayer.pause();
-
-        };
-
-        //play
-        myPlayer.ready(function () {
-
-          playplayser.addEventListener("click", function () {
-            lectureplayer();
-          });
-
-          function lectureplayer() {
-
-            myPlayer.play();
-
-
-          };
-
-
-          //close
-          closeplayser.addEventListener("click", function () {
-            fermerplayer();
-          });
-
-          function fermerplayer() {
-
-
-            myPlayer.dispose();
-
-
-          };
+    for (let episode of episodes) {
 
 
 
@@ -341,54 +209,213 @@
 
 
 
+      let newDiv = document.createElement('div');
+      newDiv.classList.add('series-frame');
+      newDiv.setAttribute("class", `series-frame ${episode.color}`);
 
 
-        });
+      // let myVideo = document.createElement('p')
+      // myVideo.classList.add('infos');
+
+      // myVideo.innerHTML = `  <video
+      //     id="my-video"
+      //     class="video-js"
+      //     controls
+      //     preload="auto"
+      //     width="640"
+      //     height="264"
+      //     poster="MY_VIDEO_POSTER.jpg"
+      //     data-setup="{}"
+      //   >
+      //     <source src="${episode.url}"  type="application/x-mpegURL">
+      //     <source src="${episode.url}"  type="video/mp4">
 
 
 
 
 
+      //     <p class="vjs-no-js">
+      //       To view this video please enable JavaScript, and consider upgrading to a
+      //       web browser that
+      //       <a href="https://videojs.com/html5-video-support/" target="_blank"
+      //         >supports HTML5 video</a
+      //       >
+      //     </p>
+      //   </video>`
 
 
+      let newTitle = document.createElement('h2');
+      newTitle.innerText = `${episode.title}`
+
+      // let newProductButton = document.createElement('button');
+      // newProductButton.innerHTML = `Voir cette chaine`
+
+      // let newUrl = document.createElement('h3');
+      // newUrl.innerHTML = `${episode.url}`
+
+      // let newParagraph = document.createElement('p');
+      // newParagraph.innerText = `${episode.title} - chaine : ${episode.channel}
 
 
+      // ${episode.duration} minutes
+      // ${episode.hasBeenWatched ? 'Already been watched' : 'Not yet watched'}`;
 
 
+      newDiv.append(newTitle);
+      // newDiv.append(newUrl);
+      // newDiv.append(newParagraph);
+      // newDiv.append(myVideo);
+
+      // newDiv.append(newProductButton);
+      box.append(newDiv);
+
+
+      //Passing this object as the argument to a onclick function
+      newDiv.addEventListener("click", function () {
+        parseplayer();
       });
 
 
+      function parseplayer() {
+
+
+        let montitre = document.querySelector("#titretv");
+        montitre.innerText = `${episode.title}`
+
+        var myPlayer = videojs('#my-video');
+        myPlayer.autoplay(true);
+        myPlayer.loop(true);
+        myPlayer.fluid(true);
+
+        myPlayer.src(`${episode.url}`);
 
 
 
 
 
 
-      // //play
-      // myPlayer.ready(function() {
+        //passer toutes les fonctions play/fermer.... lors de la création de la fonction parseplayer (creation du lecteur)
 
-      //   playplayser.addEventListener("click",function () {
-      //   lectureplayer();
-      //   });
-
-      //   function lectureplayer() {
-
-      //     myPlayer.play();
+        //fonction pleine écran
 
 
-      //   };
+        myPlayer.ready(function () {
 
-      //   // myPlayer.dispose();
+          fullplayser.addEventListener("click", function () {
+            fullplayer();
+          });
 
-      //   });
+          function fullplayer() {
+
+            // `this` is the player in this context
+
+            if (myPlayer.isFullscreen()) {
+              myPlayer.exitFullscreen();
+            } else {
+              myPlayer.requestFullscreen();
+            }
+          };
 
 
 
 
-      // let myvid = document.querySelector("#my-video_html5_api");
-      // console.log(myvid)
-      // myvid.setAttribute("src",`${episode.url}`);
-    };
+          //pause
+          pauseplayser.addEventListener("click", function () {
+            attendreplayer();
+          });
+
+          function attendreplayer() {
+
+            myPlayer.pause();
+
+          };
+
+          //play
+          myPlayer.ready(function () {
+
+            playplayser.addEventListener("click", function () {
+              lectureplayer();
+            });
+
+            function lectureplayer() {
+
+              myPlayer.play();
+
+
+            };
+
+
+            //close
+            closeplayser.addEventListener("click", function () {
+              fermerplayer();
+            });
+
+            function fermerplayer() {
+
+
+              myPlayer.dispose();
+
+
+            };
+
+
+
+
+
+
+
+
+
+
+
+
+
+          });
+
+
+
+
+
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+
+        // //play
+        // myPlayer.ready(function() {
+
+        //   playplayser.addEventListener("click",function () {
+        //   lectureplayer();
+        //   });
+
+        //   function lectureplayer() {
+
+        //     myPlayer.play();
+
+
+        //   };
+
+        //   // myPlayer.dispose();
+
+        //   });
+
+
+
+
+        // let myvid = document.querySelector("#my-video_html5_api");
+        // console.log(myvid)
+        // myvid.setAttribute("src",`${episode.url}`);
+      };
 
 
 
@@ -430,15 +457,23 @@
         const target = document.querySelector(tab.dataset.tabTarget)
         tabContents.forEach(tabContent => {
           tabContent.classList.remove('active')
-          myPlayer.dispose();
+
+   
 
         })
         tabs.forEach(tab => {
           tab.classList.remove('active')
 
+         
+
+
+
         })
         tab.classList.add('active')
         target.classList.add('active')
+
+
+
 
 
       })
