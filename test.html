@@ -136,6 +136,7 @@
 
     let firstEpisode = new TV('Gulli', 18, "enfant", 'https://origin2-6play.live.6cloud.fr/pool_rnpls9by/gulli/sixplaysd/hls_short_q2hyb21h_gulli/index.m3u8');
     let secondEpisode = new TV('supertoons', 450, "enfant", 'https://kedoo-supertoonstv-3-fr.samsung.wurl.tv/playlist.m3u8');
+  let france3  = new TV('France 3', 450, "fr3", 'http://s.tv.kwaoo.net/5/play.m3u8');
     let thirdEpisode = new TV('W9', 60, "w9", 'https://origin-fra14-ed.pzaz.tv/live/w9/playlist.m3u8');
     let quaytre = new TV('Tf1', 45, "tf1", 'https://origin-fra14-ed.pzaz.tv/live/tf1/playlist.m3u8');
     let cinq = new TV('Canal +', 45, "canal", 'http://hls-m007.live-lv3.canalplus-cdn.net/live/disk/canalplusclair-hd/hls-ios-fhd-clair/canalplusclair-hd.m3u8');
@@ -146,7 +147,7 @@
 
     // Modify the array here
     // ====================================
-    let episodes = [firstEpisode, secondEpisode, thirdEpisode, quaytre, cinq, six, sept, huit, neuf]
+    let episodes = [firstEpisode, secondEpisode, france3, thirdEpisode, quaytre, cinq, six, sept, huit, neuf]
     let numberOfEpisodes = episodes.length; // 6
 
     // ====================================
@@ -160,40 +161,23 @@
     box.classList.add('flex');
 
 
-
+    randomplayser.addEventListener("click", function () {
+      test();
+    });
 
 
     var m3u = []
 
+
     episodes.forEach(element => {
       m3u.push(element.url)
 
+
     });
 
 
 
-    //random
 
-    randomplayser.addEventListener("click", function () {
-      test();
-      
-    });
-
-    function test() {
-      var myPlayer = videojs('#my-video');
-      myPlayer.autoplay(true);
-      myPlayer.loop(true);
-      myPlayer.fluid(true);
-      var values = m3u
-      var valueToUse = values[Math.floor(Math.random() * values.length)];
-      // 
-      // alert(valueToUse);
-
-
-        
-      myPlayer.src(valueToUse);
-      console.log(valueToUse);
-    }
 
 
 
@@ -201,7 +185,46 @@
 
 
 
+      //random
 
+
+
+      function test() {
+        var myPlayer = videojs('#my-video');
+        var monttre = document.querySelector("#titretv");
+
+
+
+
+
+
+
+        myPlayer.autoplay(true);
+        myPlayer.loop(true);
+        myPlayer.fluid(true);
+        var values = m3u
+        var valueToUse = values[Math.floor(Math.random() * values.length)];
+
+
+        let pos = m3u.indexOf(valueToUse);
+        // let index = m3u.findIndex(element => element === valueToUse);
+        console.table(episodes[pos].title); // 3
+        monttre.innerText = episodes[pos].title
+        // console.log(monttre)
+
+
+
+
+
+
+
+
+
+
+        myPlayer.src(valueToUse);
+        console.log(valueToUse)
+
+      }
 
 
 
@@ -391,23 +414,7 @@
 
 
 
-        // //play
-        // myPlayer.ready(function() {
 
-        //   playplayser.addEventListener("click",function () {
-        //   lectureplayer();
-        //   });
-
-        //   function lectureplayer() {
-
-        //     myPlayer.play();
-
-
-        //   };
-
-        //   // myPlayer.dispose();
-
-        //   });
 
 
 
@@ -421,21 +428,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -444,12 +436,11 @@
 
 
 
+
+
     const tabs = document.querySelectorAll('[data-tab-target]')
     const tabContents = document.querySelectorAll('[data-tab-content]')
     var myPlayer = videojs('#my-video');
-
-
-
 
 
     tabs.forEach(tab => {
@@ -457,24 +448,13 @@
         const target = document.querySelector(tab.dataset.tabTarget)
         tabContents.forEach(tabContent => {
           tabContent.classList.remove('active')
-
-   
-
         })
         tabs.forEach(tab => {
           tab.classList.remove('active')
 
-         
-
-
-
         })
         tab.classList.add('active')
         target.classList.add('active')
-
-
-
-
 
       })
     })
@@ -489,12 +469,137 @@
 
 
 
+  <script>
+
+
+
+
+// function loadXMLDoc() {
+//   var xmlhttp = new XMLHttpRequest();
+//   xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       myFunction3(this);
+//     }
+//   };
+//   xmlhttp.open("GET", "https://mirs-kha.github.io/landscape/epg.xml", true);
+//   xmlhttp.send();
+// }
+
+// function myFunction3(xml) {
+//   var x, i, xmlDoc, txt;
+//   xmlDoc = xml.responseXML;
+//   txt = "";
+//   x = xmlDoc.getElementsByTagName("display-name");
+//   for (i = 0; i< x.length; i++) {
+//     txt += x[i].childNodes[0].nodeValue + "<br>";
+//   }
+
+//   document.getElementById("id01").innerHTML = txt;
+
+//   console.log(txt)
+// }
 
 
 
 
 
-  <script src="https://unpkg.com/@videojs/http-streaming@3.3.0/dist/videojs-http-streaming.js"></script>
+// const dinosaurs = import('/xml.json', {
+//     assert: {
+//         type: 'json'
+//     }
+// });
+
+// dinosaurs.then( d => 
+//         d.default.forEach(dino => {
+//          console.log("🦕", dino);
+//     })
+//  );
+
+
+
+
+
+
+// const https = require('https')
+// const parser = require('iptv-playlist-parser')
+
+// https
+//   .get('http://127.0.0.1:5500/1tele.m3u', res => {
+//     let data = []
+
+//     res.on('data', chunk => {
+//       data.push(chunk)
+//     })
+
+//     res.on('end', () => {
+//       const playlist = Buffer.concat(data).toString()
+
+//       const result = parser.parse(playlist)
+
+//       console.log(result)
+//     })
+//   })
+//   .on('error', err => {
+//     console.error(err.message)
+//   })
+
+
+//   console.log('ok')
+
+
+
+
+
+
+
+
+// fetch("xml.json")
+// .then(reponse => reponse.json())
+// .then(json=> output.innerHTML = JSON.stringify(json));
+// console.log(json)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   </script>
+// <button type="button" onclick="loadXMLDoc()">
+//   Get my CD collection</button>
+  
+
+  <div id="output"> </div>
+
+  <button type="button" onclick="manif()">
+    Get my CD collection</button>
+<header></header>
+    <section></section>
+
+
+
+
+
+
+
+
+
+  <script src="xml.js"></script>
+  <script src="xml.json"  type="application/json"></script>
 
 </body>
 
