@@ -1,0 +1,80 @@
+{
+  "tvshow": [
+    {
+      "titre": "Guilli",
+      "channel": "TF1",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "https://origin2-6play.live.6cloud.fr/pool_rnpls9by/gulli/sixplaysd/hls_short_q2hyb21h_gulli/index.m3u8",
+      "chaine": "1"
+    },
+    {
+      "titre": "Supertoons",
+      "channel": "TF11",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "https://kedoo-supertoonstv-3-fr.samsung.wurl.tv/playlist.m3u8",
+      "chaine": "2"
+    },
+    {
+      "titre": "France 2",
+      "channel": "TF12",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "http://livetv.ktv.zone/4/play.m3u8",
+      "chaine": "3"
+    },
+    {
+      "titre": "France 3",
+      "channel": "TF12",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "http://livetv.ktv.zone/5/play.m3u8",
+      "chaine": "3"
+    },
+    {
+      "titre": "w9",
+      "channel": "TF13",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "https://origin-fra14-ed.pzaz.tv/live/w9/playlist.m3u8",
+      "chaine": "4"
+    },
+    {
+      "titre": "canal +",
+      "channel": "TF13",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "http://hls-m007.live-lv3.canalplus-cdn.net/live/disk/canalplusclair-hd/hls-ios-fhd-clair/canalplusclair-hd.m3u8",
+      "chaine": "4"
+    },
+
+    {
+      "titre": "tf1 +",
+      "channel": "TF13",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "http://livetv.ktv.zone/3/play.m3u8",
+      "chaine": "4"
+    },
+
+
+    {
+      "titre": "tf1",
+      "channel": "TF14",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "https://origin-fra14-ed.pzaz.tv/live/tf1/playlist.m3u8",
+      "chaine": "5"
+    }
+  ],
+
+
+  "vod": [
+    {
+      "titre": "fr2",
+      "channel": "fr2",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "fr2.fr"
+    },
+    {
+      "titre": "fr22",
+      "channel": "fr22",
+      "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
+      "url": "fr2"
+    }
+  ]
+  
+}
