@@ -190,6 +190,9 @@ fetch(myRequest11)
         myPlayer2.autoplay(true);
         myPlayer2.loop(true);
         myPlayer2.fluid(true);
+        myPlayer2.type('video/mp4');
+        
+        
 
         myPlayer2.src(vod.url);
         console.log(vod.url)
