@@ -179,10 +179,6 @@ fetch(myRequest11)
         listVod.classList.add('flex');
 
 
-        const createVod = document.createElement('video-js');
-        myList1.append(createVod);
-        createVod.setAttribute("id", "my-video")
-        createVod.setAttribute("data-setup", "{}")
 
 
 
@@ -190,9 +186,6 @@ fetch(myRequest11)
         myPlayer2.autoplay(true);
         myPlayer2.loop(true);
         myPlayer2.fluid(true);
-        myPlayer2.type('video/mp4');
-        
-        
 
         myPlayer2.src(vod.url);
         console.log(vod.url)
