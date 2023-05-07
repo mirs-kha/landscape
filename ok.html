@@ -1,208 +1,121 @@
-const myList = document.querySelector('#parsejs')
-const myRequest1 = new Request("xml.json")
-const hazaurl = document.querySelector('#hazar')
+<!DOCTYPE html>
+<html lang="fr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <title>Document</title>
+</head>
 
-var myPlayer = videojs('#my-video');
+<body>
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
 
+    <div class="tab-content">
+        <div id="home2" data-tab-content class="active">
+            <h1>Direct</h1>
+            <p>This is the home</p>
+            <p>Number of channel: <span id="compteurChaine"></span></p>
 
 
-myPlayer.ready(function () {
 
 
-  //full
-  fullplayser.addEventListener("click", function () {
-    fullplayer();
-  });
+            <div class="all">
 
-  function fullplayer() {
-    if (myPlayer.isFullscreen()) {
-      myPlayer.exitFullscreen();
-    } else {
-      myPlayer.requestFullscreen();
-    }
-  };
+                <div id="monlecteur" class="lecteur">
 
 
-  //pause
-  pauseplayser.addEventListener("click", function () {
-    attendreplayer();
-  });
-  function attendreplayer() {
 
-    if (myPlayer == myPlayer.paused()) {
+                    <div id="hazar"></div>
 
-      myPlayer.play();
-    } else {
-      myPlayer.pause();
-    }
-  };
 
-  //play
-  myPlayer.ready(function () {
-    playplayser.addEventListener("click", function () {
-      lectureplayer();
-    });
-    function lectureplayer() {
-      myPlayer.play();
-    };
+                    <h3 id="titretv"></h3>
+                    <video id="my-video" class="video-js" controls preload="auto" vjs-16-9 data-setup="{}" src="
+                                https://vjs.zencdn.net/v/oceans.mp4">
 
 
-    //close
-    closeplayser.addEventListener("click", function () {
-      fermerplayer();
-    });
-    function fermerplayer() {
-      myPlayer.dispose();
-    };
-  });
-});
 
-fetch(myRequest1)
-  .then(reponse => reponse.json())
-  .then((data) => {
-    for (const product of data.tvshow) {
+                    </video>
 
-      const listItem = document.createElement("div");
-      listItem.classList.add('series-frame');
-      listItem.setAttribute("class", `series-frame ${product.color}`);
 
 
 
+                    <div class="mesboutons">
+                        <button id="fullplayser" class="grandecran">Passer en plein écran</button>
+                        <button id="pauseplayser" class="grandecran">Pause</button>
+                        <button id="playplayser" class="grandecran">Play</button>
+                        <button id="closeplayser" class="grandecran">Fermer</button>
+                        <button id="randomplayer" class="grandecran">Random</button>
 
-      listItem.append(product.titre);
-      myList.appendChild(listItem);
+                    </div>
 
-      let numberOfChannel = data.tvshow.length;
-      document.querySelector('#compteurChaine').innerText = numberOfChannel;
 
+                </div>
 
+                <div id="maliste" class="liste">
+                    <div id="parsejs"></div>
+                </div>
+            </div>
 
 
-      // randam channel
-      randomplayer.addEventListener("click", function () {
-        test();
-      });
+        </div>
 
-      function test() {
 
-        myPlayer.autoplay(true);
-        myPlayer.loop(true);
-        myPlayer.fluid(true);
 
-        var m3u = []
-        data.tvshow.forEach(element => {
-          m3u.push(element)
-        });
-        var values = m3u
-        var valueToUse = values[Math.floor(Math.random() * values.length)];
-        let pos = m3u.indexOf(valueToUse);
-        // let index = m3u.findIndex(element => element === valueToUse);
-        console.table(m3u[pos]);
-        titretv.innerText = `${m3u[pos].titre}`
+        <div id="enfant" data-tab-content>
+            <h1>Enfants</h1>
+            <p>Some information on pricing</p>
+            <div class="all">
 
+                <div id="parsejs2">
+                    <div id="vod">
+                        <video id="my-video" class="video-js" controls preload="auto" vjs-16-9 data-setup="{}">
 
-        myPlayer.src(m3u[pos].url);
-        console.log(m3u[pos].url)
-      }
 
 
+            </video>
+                    </div>
 
-      //Passing this object as the argument to a onclick function
-      listItem.addEventListener("click", function () {
-        parseplayer();
-      });
+                </div>
 
+            </div>
 
-      function parseplayer() {
-        myPlayer.autoplay(true);
-        myPlayer.loop(true);
-        myPlayer.fluid(true);
+            <div id="maliste" class="liste">
 
-        let montitre = document.querySelector("#titretv");
-        montitre.innerText = `${product.titre}`
+            </div>
+        </div>
 
+        <div id="cinema" data-tab-content>
+            <h1>Cinéma</h1>
+            <p>Let me tell you about me</p>
+        </div>
 
+        <div id="news" data-tab-content>
+            <h1>News</h1>
+            <p>News is great.</p>
 
-        myPlayer.src(`${product.url}`);
+        </div>
 
 
-      };
+        <ul class="tabs">
+            <li data-tab-target="#home2" class="active tab">Direct</li>
+            <li data-tab-target="#enfant" class="tab">Enfant</li>
+            <li data-tab-target="#cinema" class="tab">Cinema</li>
+            <li data-tab-target="#news" class="tab">News</li>
+        </ul>
 
+    </div>
 
+    <script src="assets/js/parse.js"></script>
+    <script src="assets/js/tabs.js"></script>
 
+    <script src="xml.json" type="application/json"></script>
 
+</body>
 
-
-    }
-  })
-  .catch(console.error);
-
-
-
-
-
-
-
-
-
-
-const myList1 = document.querySelector('#parsejs2')
-const myRequest11 = new Request("xml.json")
-var myPlayer2 = videojs('#my-video');
-
-fetch(myRequest11)
-  .then(reponse => reponse.json())
-  .then((data) => {
-    for (const vod of data.vod) {
-      const listItem = document.createElement('div');
-
-      listItem.append(`${vod.titre} - ${vod.url}`);
-
-      myList1.append(listItem);
-
-
-
-
-      //Passing this object as the argument to a onclick function
-      listItem.addEventListener("click", function () {
-        parseplayer2();
-      });
-
-
-      function parseplayer2() {
-        
-        
-        const listVod = document.createElement('div');
-        myList1.append(listVod);
-        listVod.classList.add('flex');
-
-
-        const createVod = document.createElement('video-js');
-        myList1.append(createVod);
-        createVod.setAttribute("id", "my-video")
-        createVod.setAttribute("data-setup", "{}")
-
-
-
-
-        myPlayer2.autoplay(true);
-        myPlayer2.loop(true);
-        myPlayer2.fluid(true);
-
-        myPlayer2.src(vod.url);
-        console.log(vod.url)
-
-
-
-
-      };
-
-
-
-
-
-    }
-  })
-  .catch(console.error);
+</html>
