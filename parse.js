@@ -207,7 +207,7 @@ fetch(myRequest11)
 
             btn1.addEventListener("click", function () {
               ouvrirModal();
-              console.log(btn1)
+
             });
 
             function ouvrirModal() {
@@ -215,7 +215,7 @@ fetch(myRequest11)
               btnModal.style.display = "block"
               btnModal.style.color = "black"
 
-
+              console.log(vod.url)
                       var myPlayer2 = videojs('#my-video');
               myPlayer2.autoplay(true);
               myPlayer2.loop(true);
@@ -226,15 +226,16 @@ fetch(myRequest11)
       
       
               myPlayer2.loadMedia({
-
-                title: `${vod.titre}`,
+                artist: 'Disney',
+                album: 'Oceans',
+                title: vod.titre,
                 description: 'Journey in to the depths ... and race with dolphins at play.',
-                poster: 'http://mypanel.tv:80/images/tCBxnZwLiY1BOKw3tH6AxHZdqPh_small.jpg',
+                poster: 'https://vjs.zencdn.net/v/oceans.png',
                 src: [{
-                  src: 'http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296063.mkv',
+                  src: vod.url,
                   type: 'application/x-mpegURL'
                 }, {
-                  src: 'http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296063.mkv',
+                  src: vod.url,
                   type: 'video/mp4'
                 }]
               })
