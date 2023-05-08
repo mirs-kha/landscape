@@ -47,7 +47,7 @@
       "titre": "tf1 +",
       "channel": "TF13",
       "color": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4u3EMdVyFA2uqIpbnwKBT1GRW9U-mA2jyCz28L2ieGx4vB9bKhpInhHCIqmk&amp;s",
-      "url": "ttp://x.v-iptv.com:25443/live/rita33/novert6622/108537.ts",
+      "url": "http://livetv.ktv.zone/3/play.m3u8",
       "chaine": "4"
     },
 
@@ -64,23 +64,25 @@
 
   "vod": [
     {
-      "titre": "Johnny English Contre Attaque 2018",
+      "titre": "Astérix & Obélix : L'Empire du Milieu (2023)",
+      "id" : 1,
       "rubrique1": "Comedie",
       "rubrique2": "Action",
       "rubrique3": "Aventure",
-      "img": "http://mypanel.tv:80/images/tCBxnZwLiY1BOKw3tH6AxHZdqPh_small.jpg",
-      "url": "http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296087.mp4",
+      "img": "https://www.themoviedb.org/t/p/original/gTeepoTsjCxbVIMq2UQUZ8eZVFb.jpg",
+      "url": "http://player.smartvpluseu.com:8080/movie/3143122720748133/2598854265/325558.mkv",
       "date": "10/10/2018",
       "duree": "1h 29m",
       "synopsis": "Une cyberattaque révèle l’identité de tous les agents britanniques sous couverture. Johnny English devient alors le dernier espoir des services secrets. Rappelé de sa retraite, il plonge tête la première dans sa mission : découvrir qui est le génie du piratage qui se cache derrière ces attaques. Avec ses méthodes obsolètes Johnny English doit relever les défis de la technologie moderne pour assurer la réussite de sa mission."
     },
     {
       "titre": "Assassination Nation (2018)",
+      "id" : 2,
       "rubrique1": "Comedie",
       "rubrique2": "Thriller",
       "rubrique3": "Aventure",
       "img": "http://mypanel.tv:80/images/tCBxnZwLiY1BOKw3tH6AxHZdqPh_small.jpg",
-      "url": "http://mag.you24.online:80/movie/Adilzborci/i5x4yi4klk/634423.mkv",
+      "url": "http://player.smartvpluseu.com:8080/movie/3143122720748133/2598854265/264459.mp4",
       "date": "10/10/2018",
       "duree": "1h 29m",
       "synopsis": "Une cyberattaque révèle l’identité de tous les agents britanniques sous couverture. Johnny English devient alors le dernier espoir des services secrets. Rappelé de sa retraite, il plonge tête la première dans sa mission : découvrir qui est le génie du piratage qui se cache derrière ces attaques. Avec ses méthodes obsolètes Johnny English doit relever les défis de la technologie moderne pour assurer la réussite de sa mission."
