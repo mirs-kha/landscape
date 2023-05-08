@@ -233,10 +233,10 @@ fetch(myRequest11)
                 poster: 'https://vjs.zencdn.net/v/oceans.png',
                 src: [{
                   src: vod.url,
-                  type: 'application/x-mpegURL'
+                  type: 'video/mp4'
                 }, {
                   src: vod.url,
-                  type: 'video/mp4'
+                  type: 'application/x-mpegURL'
                 }]
               })
              
