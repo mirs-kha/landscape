@@ -156,49 +156,184 @@ fetch(myRequest11)
   .then(reponse => reponse.json())
   .then((data) => {
     for (const vod of data.vod) {
-      const listItem = document.createElement('div');
 
-      listItem.append(`${vod.titre} - ${vod.url}`);
 
-      myList1.append(listItem);
+
+      const myList1 = document.querySelector('#parsejs2')
+      const myRequest11 = new Request("xml.json")
+
+
+      fetch(myRequest11)
+        .then(reponse => reponse.json())
+        .then((data) => {
+          for (const vod of data.vod) {
+
+
+            var idModal = `myModal-${vod.id}`
+            var idbtn = `myBtn-${vod.id}`
+            var closeModal = `close-${vod.id}`
+
+
+
+            const passe = document.createElement('div');
+            passe.setAttribute("id", "myMet");
+            passe.classList.add("listefilms");
+            passe.innerHTML = `${vod.titre} - ${vod.url}`
+            myList1.append(passe)
+
+            const btn1 = document.createElement('button')
+            btn1.setAttribute("id", idbtn)
+            btn1.innerHTML = `cliquer pour voir ${vod.titre} avec ${idbtn} + ${idModal}`
+            passe.append(btn1)
+
+
+
+            const btnModal = document.createElement('div')
+            btnModal.setAttribute("id", idModal)
+            btnModal.classList.add("modal")
+
+            const myModal = document.createElement('div')
+            myModal.setAttribute("class", "modal-content")
+
+            const span1 = document.createElement('span')
+            span1.classList.add(closeModal)
+            span1.innerHTML = "&times;"
+            myModal.append(span1)
+
+            const content = document.createElement('p')
+            content.innerHTML = (`${vod.titre}`)
+            myModal.append(content)
+            btnModal.append(myModal)
+
+            passe.append(btnModal)
+            passe.append(btnModal)
+
+
+
+            btn1.addEventListener("click", function () {
+              ouvrirModal();
+              console.log(btn1)
+            });
+
+            function ouvrirModal() {
+              
+              btnModal.style.display = "block"
+              btnModal.style.color = "black"
+
+
+                      var myPlayer2 = videojs('my-video', {
+          sources: [{
+            src: `http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296064.mkv`,
+            type: 'video/mp4'
+          }, {
+            src: `http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296064.mkv`,
+            type: 'application/x-mpegURL'
+          }]
+        });
+              myPlayer2.autoplay(true);
+              myPlayer2.loop(true);
+              myPlayer2.fluid(true);
+      
+              let montitre = document.querySelector("#titretv");
+              montitre.innerText = `${vod.titre}`
+      
+      
+      
+              myPlayer2.src(`${vod.url}`);
+              myPlayer2.type(`video/mp4`);
+              myPlayer2.type(`application/x-mpegURL`);
+
+
+            };
+
+
+            span1.addEventListener("click", function () {
+              fermerModal()
+            })
+
+            function fermerModal() {
+              btnModal.style.display = "none";
+            }
+          }
+
+
+        })
+        .catch(console.error);
+
+
+
+
+
+
+      // function parseplayer2() {
+
+      //   var myPlayer2 = videojs('my-video', {
+      //     sources: [{
+      //       src: 'http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296063.mkv',
+      //       type: 'video/mp4'
+      //     }, {
+      //       src: 'http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296063.mkv',
+      //       type: 'video/webm'
+      //     }]
+      //   });
+      //   const listVod = document.createElement('div');
+      //   myList1.append(listVod);
+      //   listVod.classList.add('flex');
+
 
 
 
 
       //Passing this object as the argument to a onclick function
-      listItem.addEventListener("click", function () {
-        parseplayer2();
-      });
+      // btn2.addEventListener("click", function () {
+      //   parseplayer2();
+      // });
 
 
-      function parseplayer2() {
-        
-        var myPlayer2 = videojs('#my-video');
-        const listVod = document.createElement('div');
-        myList1.append(listVod);
-        listVod.classList.add('flex');
+      // function parseplayer2() {
+      //   var myPlayer2 = videojs('#my-video');
+      //   myPlayer2.autoplay(true);
+      //   myPlayer2.loop(true);
+      //   myPlayer2.fluid(true);
+
+      //   let montitre = document.querySelector("#titretv");
+      //   montitre.innerText = `${vod.titre}`
 
 
 
+      //   myPlayer2.src(`${vod.url}`);
 
 
-
-        myPlayer2.autoplay(true);
-        myPlayer2.loop(true);
-        myPlayer2.fluid(true);
-
-        myPlayer2.src(vod.url);
-        console.log(vod.url)
+      // };
 
 
 
 
-      };
+      // };
+
+
+
+
+
 
 
 
 
 
     }
+
+
+
+
+
+
+
+
+
   })
   .catch(console.error);
+
+
+
+
+
