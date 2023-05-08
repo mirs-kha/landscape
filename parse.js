@@ -163,11 +163,6 @@ fetch(myRequest11)
       const myRequest11 = new Request("xml.json")
 
 
-      fetch(myRequest11)
-        .then(reponse => reponse.json())
-        .then((data) => {
-          for (const vod of data.vod) {
-
 
             var idModal = `myModal-${vod.id}`
             var idbtn = `myBtn-${vod.id}`
@@ -221,15 +216,7 @@ fetch(myRequest11)
               btnModal.style.color = "black"
 
 
-                      var myPlayer2 = videojs('my-video', {
-          sources: [{
-            src: `http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296064.mkv`,
-            type: 'video/mp4'
-          }, {
-            src: `http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296064.mkv`,
-            type: 'application/x-mpegURL'
-          }]
-        });
+                      var myPlayer2 = videojs('#my-video');
               myPlayer2.autoplay(true);
               myPlayer2.loop(true);
               myPlayer2.fluid(true);
@@ -238,10 +225,21 @@ fetch(myRequest11)
               montitre.innerText = `${vod.titre}`
       
       
-      
-              myPlayer2.src(`${vod.url}`);
-              myPlayer2.type(`video/mp4`);
-              myPlayer2.type(`application/x-mpegURL`);
+              myPlayer2.loadMedia({
+
+                title: `${vod.titre}`,
+                description: 'Journey in to the depths ... and race with dolphins at play.',
+                poster: 'http://mypanel.tv:80/images/tCBxnZwLiY1BOKw3tH6AxHZdqPh_small.jpg',
+                src: [{
+                  src: 'http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296063.mkv',
+                  type: 'application/x-mpegURL'
+                }, {
+                  src: 'http://parkpay.live:8080/movie/overkill/dB2hBKSxdP/296063.mkv',
+                  type: 'video/mp4'
+                }]
+              })
+             
+
 
 
             };
@@ -320,7 +318,6 @@ fetch(myRequest11)
 
 
 
-    }
 
 
 
@@ -330,8 +327,7 @@ fetch(myRequest11)
 
 
 
-  })
-  .catch(console.error);
+
 
 
 
