@@ -215,32 +215,34 @@ fetch(myRequest11)
               btnModal.style.display = "block"
               btnModal.style.color = "black"
 
-              console.log(vod.url)
-                      var myPlayer2 = videojs('#my-video');
+
+                      var myPlayer2 = videojs('#video');
+
+
+
+ 
               myPlayer2.autoplay(true);
               myPlayer2.loop(true);
               myPlayer2.fluid(true);
-      
+
               let montitre = document.querySelector("#titretv");
               montitre.innerText = `${vod.titre}`
+
       
-      
+
               myPlayer2.loadMedia({
-                artist: 'Disney',
-                album: 'Oceans',
+
                 title: vod.titre,
+
                 description: 'Journey in to the depths ... and race with dolphins at play.',
                 poster: 'https://vjs.zencdn.net/v/oceans.png',
-                src: [{
-                  src: vod.url,
-                  type: 'video/mp4'
-                }, {
-                  src: vod.url,
-                  type: 'application/x-mpegURL'
-                }]
-              })
-             
 
+                  src: vod.url
+                  
+              })
+
+              console.log(vod.url)
+              console.log(vod.titre)
 
 
             };
